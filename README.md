@@ -7,14 +7,15 @@ This React Native project introduces a popular framework for building mobile app
 ##
 - **`Create Expo Go`**
 ```
-npx create-expo-app AwesomeProject
+npx create-expo-app ProjectName
 
-cd AwesomeProject
+cd ProjectName
 ```
 
 - **`Run Expo Go`**
 ```
 npx expo start
+npm run android  
 ```
 
 #  
@@ -23,7 +24,7 @@ npx expo start
 https://github.com/Pasan-Pahasara/Mobile-Application-Development.git
 ```
 ###                                              
-###### If you think my code is good pleace drop a Star <img src="https://github.com/Pasan-Pahasara/md-alpha/blob/main/star.webp" width="40px">
+###### If you think my code is good please drop a Star <img src="https://github.com/Pasan-Pahasara/md-alpha/blob/main/star.webp" width="40px">
 
 ![GitHub issues](https://img.shields.io/github/issues/Pasan-Pahasara/Mobile-Application-Development?&labelColor=black&color=eb3b5a&label=Issues&logo=issues&logoColor=black&style=for-the-badge)
 ![GitHub Contributions](https://img.shields.io/github/contributors/Pasan-Pahasara/Mobile-Application-Development?&labelColor=black&color=8854d0&style=for-the-badge)
