@@ -1,6 +1,13 @@
 // import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, View, ScrollView } from "react-native";
+import {
+  Button,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  FlatList,
+} from "react-native";
 
 export default function App() {
   const [enteredGoalText, setEnteredGoalText] = useState("");
@@ -11,57 +18,28 @@ export default function App() {
   };
 
   const addGoalHandler = () => {
-    console.log(enteredGoalText);
-    setCourseGoals((currentCourseGoals) => [
-      ...currentCourseGoals,
-      enteredGoalText,
-    ]);
+    setCourseGoals((currentCourseGoals) => [...currentCourseGoals, {text: enteredGoalText, key:Math.random().toString()}]);
   };
 
   return (
-    // <View style={styles.container}>
-    //   <Text>Open up App.js to start working on your app!</Text>
-    //   <StatusBar style="auto" />
-    //   <View>
-    //     <Text style={{ margin: 16, borderColor: 'red' }}>Hello World 1!</Text>
-    //     <Text style={styles.dummyText}>Hello World 2!</Text>
-    //   </View>
-    //   <Button title="Click Me!" />
-    // </View>
     <View style={styles.appContainer}>
       <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Your Cource Goal"
-          onChangeText={goalInputHandler}
-        />
+        <TextInput style={styles.textInput} placeholder="Your Cource Goal" onChangeText={goalInputHandler} />
         <Button title="ADD GOAL" onPress={addGoalHandler} />
       </View>
-      <ScrollView style={styles.goalContainer}>
-        {courseGoals.map((goal) => 
-        (<View style={styles.goalItem} key={goal}>
-          <Text style={styles.goalText}>{goal}</Text>
-          </View>
-        ))
-        }
-      </ScrollView>
+      <FlatList data={courseGoals} renderItem={itemData => {
+          return (
+            <View style={styles.goalItem}>
+              <Text style={styles.goalText}>{itemData.item.text}</Text>
+            </View>
+          );
+        }}
+      ></FlatList>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: "#fff",
-  //   alignItems: "center",
-  //   justifyContent: "center",
-  // },
-  // dummyText: {
-  //   margin: 16,
-  //   padding: 16,
-  //   borderWidth: 2,
-  //   borderColor: "red",
-  // },
   appContainer: {
     flex: 1,
     paddingTop: 50,
@@ -77,7 +55,7 @@ const styles = StyleSheet.create({
     borderBottomColor: "#cccccc",
   },
   textInput: {
-    width: "70%",
+    width: '70%',
     marginRight: 8,
     padding: 8,
   },
@@ -89,9 +67,8 @@ const styles = StyleSheet.create({
     padding: 8,
     borderRadius: 6,
     backgroundColor: "#5e0acc",
-    color: "white",
   },
-  goalText:{
+  goalText: {
     color: "white",
   },
 });
