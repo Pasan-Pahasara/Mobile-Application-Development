@@ -18,7 +18,7 @@ export default function App() {
   };
 
   const addGoalHandler = () => {
-    setCourseGoals((currentCourseGoals) => [...currentCourseGoals, {text: enteredGoalText, key:Math.random().toString()}]);
+    setCourseGoals((currentCourseGoals) => [...currentCourseGoals, {text: enteredGoalText, id:Math.random().toString()}]);
   };
 
   return (
@@ -27,7 +27,7 @@ export default function App() {
         <TextInput style={styles.textInput} placeholder="Your Cource Goal" onChangeText={goalInputHandler} />
         <Button title="ADD GOAL" onPress={addGoalHandler} />
       </View>
-      <FlatList data={courseGoals} renderItem={itemData => {
+      <FlatList data={courseGoals} keyExtractor={(item, index) => item.id} renderItem={itemData => {
           return (
             <View style={styles.goalItem}>
               <Text style={styles.goalText}>{itemData.item.text}</Text>
