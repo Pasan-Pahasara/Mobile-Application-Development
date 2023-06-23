@@ -11,7 +11,8 @@ export default function App() {
     <>
       <StatusBar style="light"></StatusBar>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Meals Categories">
+           {/* default ganna screen eka thamai udinma thina eka, nattam apita initialRouteName kiyala default ganna ona eka dennath puluvan*/}
           <Stack.Screen name="Meals Categories" component={CategoryScreen} />
           <Stack.Screen name="Meals Overview" component={MealsOverviewScreen} />
         </Stack.Navigator>

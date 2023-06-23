@@ -1,11 +1,14 @@
 import { FlatList } from "react-native";
 import { CATEGORIES } from "../data/dummy-data";
 import CategoryGridTile from "../components/CategoryGridTile";
+import { useNavigation } from "@react-navigation/native";
 
-const CategoryScreen = ({ navigation }) => {
+const CategoryScreen = () => {
+  const navigation = useNavigation();//use navigation hook eken thamai navigate method eka call karanne.
+
   const renderCategoryItem = (itemData) => {
     const pressHandler = () => {
-      navigation.navigate("Meals Overview");
+      navigation.navigate("Meals Overview",{categoryId: itemData.item.id});//navigate method ekata passed karanava navigate karanna ona screen eka saha pass karanna ona data tika object ekak vidihata
     };
 
     return (
