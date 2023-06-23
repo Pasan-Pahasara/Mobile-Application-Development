@@ -23,6 +23,33 @@ npm install @react-navigation/native
 npx expo install react-native-screens react-native-safe-area-context
 ```
 ##
+## Navigators
+- **`Stack Navigator`**
+```
+npm install @react-navigation/stack
+```
+- **`Native Stack Navigator`**
+```
+npm install @react-navigation/native-stack
+```
+- **`Drawer Navigator`**
+```
+npm install @react-navigation/drawer
+```
+- **`Bottom Tabs Navigator`**
+```
+npm install @react-navigation/bottom-tabs
+```
+- **`Material Bottom Tabs Navigator`**
+```
+npm install @react-navigation/material-bottom-tabs react-native-paper react-native-vector-icons
+```
+- **`Material Top Tabs Navigator`**
+```
+npm install @react-navigation/material-top-tabs react-native-tab-view
+```
+##
+
 - **`Run Expo Go`**
 ```
 npx expo start
