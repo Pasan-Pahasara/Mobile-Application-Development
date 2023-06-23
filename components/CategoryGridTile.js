@@ -1,4 +1,4 @@
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import { View, Text, Pressable, StyleSheet, Platform } from "react-native";
 
 const CategoryGridTile = ({ title, color }) => {
   return (
@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
-    overflow:'hidden'//ios valadi background ekath ekka yanava
+    // overflow:'hidden'//ios valadi background ekath ekka yanava
+    overflow: Platform.OS === 'android' ? 'hidden' : 'visible' //android nam os eka hidden karanava overflow eka nattam visible karanava
   },
   button: {
     flex: 1,
