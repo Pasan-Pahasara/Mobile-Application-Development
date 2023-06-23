@@ -13,11 +13,16 @@ cd ProjectName
 ```
 
 ##
-- **`Install ReactNative Navigations`**
+- **`Installing ReactNative Navigations`**
 ```
 npm install @react-navigation/native
 ```
 
+- **`Installing dependencies into an Expo managed project`**
+```
+npx expo install react-native-screens react-native-safe-area-context
+```
+##
 - **`Run Expo Go`**
 ```
 npx expo start
