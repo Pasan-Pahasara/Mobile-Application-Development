@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
+import CategoryScreen from "./screens/CategoryScreen";
 
 export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
@@ -22,16 +23,7 @@ export default function App() {
   };
 
   return (
-    <View style={styles.appContainer}>
-      <GoalInput onAddGoal={addGoalHandler} />
-      <FlatList
-        data={courseGoals}
-        keyExtractor={(item, index) => item.id}
-        renderItem={(itemData) => {
-          return <GoalItem text={itemData.item.text} />;
-        }}
-      ></FlatList>
-    </View>
+   <CategoryScreen />
   );
 }
 
