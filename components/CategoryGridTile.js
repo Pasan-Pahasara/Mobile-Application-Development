@@ -3,7 +3,7 @@ import { View, Text, Pressable, StyleSheet } from "react-native";
 const CategoryGridTile = ({ title, color }) => {
   return (
     <View style={styles.gridItem}>
-      <Pressable style={styles.button}>
+      <Pressable android_ripple={{color:'#ccc'}} style={styles.button}>
         <View style={styles.innerContainer}>
           <Text style={styles.title}>{title}</Text>
         </View>
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
+    overflow:'hidden'//ios valadi background ekath ekka yanava
   },
   button: {
     flex: 1,
