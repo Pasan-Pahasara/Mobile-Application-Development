@@ -1,5 +1,10 @@
 import { FlatList, Text } from "react-native";
 import { CATEGORIES } from "../data/dummy-data";
+import CategoryGridTile from "../components/CategoryGridTile";
+
+const renderCategoryItem = () => {
+  return <CategoryGridTile title={itemData.item.title} />
+}
 
 const CategoryScreen = () => {
   return (
