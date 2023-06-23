@@ -1,6 +1,6 @@
 import { View, Text, Pressable } from 'react-native'
 
-const CategoryGridTile = ({title}) => {
+const CategoryGridTile = ({title, color}) => {
   return (
     <View>
       <Pressable>

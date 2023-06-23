@@ -1,9 +1,9 @@
-import { FlatList, Text } from "react-native";
+import { FlatList } from "react-native";
 import { CATEGORIES } from "../data/dummy-data";
 import CategoryGridTile from "../components/CategoryGridTile";
 
-const renderCategoryItem = () => {
-  return <CategoryGridTile title={itemData.item.title} />
+const renderCategoryItem = (itemData) => {
+  return <CategoryGridTile title={itemData.item.title} color={itemData.item.color} />
 }
 
 const CategoryScreen = () => {
@@ -12,6 +12,7 @@ const CategoryScreen = () => {
       data={CATEGORIES}
       keyExtractor={(item) => item.id}
       renderItem={renderCategoryItem}
+      numColumns={2}
     />
   );
 };
