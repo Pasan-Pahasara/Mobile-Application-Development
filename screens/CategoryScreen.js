@@ -8,7 +8,7 @@ const CategoryScreen = () => {
 
   const renderCategoryItem = (itemData) => {
     const pressHandler = () => {
-      navigation.navigate("Meals Overview",{categoryId: itemData.item.id});//navigate method ekata passed karanava navigate karanna ona screen eka saha pass karanna ona data tika object ekak vidihata
+      navigation.navigate("MealsOverview",{categoryId: itemData.item.id});//navigate method ekata passed karanava navigate karanna ona screen eka saha pass karanna ona data tika object ekak vidihata
     };
 
     return (

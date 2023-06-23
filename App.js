@@ -11,10 +11,26 @@ export default function App() {
     <>
       <StatusBar style="light"></StatusBar>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Meals Categories">
-           {/* default ganna screen eka thamai udinma thina eka, nattam apita initialRouteName kiyala default ganna ona eka dennath puluvan*/}
-          <Stack.Screen name="Meals Categories" component={CategoryScreen} />
-          <Stack.Screen name="Meals Overview" component={MealsOverviewScreen} />
+        <Stack.Navigator
+          initialRouteName="Meals Categories"
+          screenOptions={{
+            headerStyle: { backgroundColor: "#3514" },
+            headerTintColor: "#fff",
+            headerTitleStyle: { fontWeight: "bold" },
+            contentStyle: { backgroundColor: "#3f2f25" },
+          }}
+        >
+          {/* default ganna screen eka thamai udinma thina eka, nattam apita initialRouteName kiyala default ganna ona eka dennath puluvan*/}
+          <Stack.Screen
+            name="MealsCategories"
+            component={CategoryScreen}
+            options={{ title: "Meals Categories" }}
+          />
+          <Stack.Screen
+            name="MealsOverview"
+            component={MealsOverviewScreen}
+            options={{ title: "Meals Overview" }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>
