@@ -12,6 +12,12 @@ npx create-expo-app ProjectName
 cd ProjectName
 ```
 
+##
+- **`Install ReactNative Navigations`**
+```
+npm install @react-navigation/native
+```
+
 - **`Run Expo Go`**
 ```
 npx expo start
