@@ -24,14 +24,18 @@ const MealsOverviewScreen = ({ route }) => {
     };
 
     return (
-    //  <MealItem title={itemData.item.title}/>
-     <MealItem {...mealItemProps}/> //meka props vidihata pass karanava spred 
+      //  <MealItem title={itemData.item.title}/>
+      <MealItem {...mealItemProps} /> //meka props vidihata pass karanava spred
     );
   };
-  
+
   return (
     <View style={styles.container}>
-      <FlatList data={displayMeals} keyExtractor={(item) => item.id} renderItem={renderMealItem}/>
+      <FlatList
+        data={displayMeals}
+        keyExtractor={(item) => item.id}
+        renderItem={renderMealItem}
+      />
     </View>
   );
 };
