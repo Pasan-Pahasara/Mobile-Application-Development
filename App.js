@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { Ionicons } from "@expo/vector-icons";
 
 import CategoryScreen from "./screens/CategoryScreen";
 import MealsOverviewScreen from "./screens/MealsOverviewScreen";
@@ -27,8 +28,26 @@ const DrawerNavigator = () => {
         drawerInactiveTintColor: "#fff",
       }}
     >
-      <Drawer.Screen name="Categories" component={CategoryScreen} options={{title:"All Categories"}} />
-      <Drawer.Screen name="Favorites" component={FavoritesScreen} />
+      <Drawer.Screen
+        name="Categories"
+        component={CategoryScreen}
+        options={{
+          title: "All Categories",
+          drawerIcon: ({ size, color }) => {
+            return <Ionicons name="list" size={size} color={color} />;
+          },
+        }}
+      />
+      <Drawer.Screen
+        name="Favorites"
+        component={FavoritesScreen}
+        options={{
+          title: "Favorites",
+          drawerIcon: ({ size, color }) => {
+            return <Ionicons name="ios-star-sharp" size={size} color={color} />;
+          },
+        }}
+      />
     </Drawer.Navigator>
   );
 };
