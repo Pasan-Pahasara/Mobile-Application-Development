@@ -17,17 +17,17 @@ const MealDetailScreen = ({ route, navigation }) => {
 
   const selectedMeal = MEALS.find((meal) => meal.id === mealId); //dummy data valin meal eka gannava
 
-  const headerButtonPressHandler = () => {
-    console.log("Header Button Pressed!");
-  };
+  // const headerButtonPressHandler = () => {
+  //   console.log("Header Button Pressed!");
+  // };
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerRight: () => {
-        return <Button title="Tap Me!" onPress={headerButtonPressHandler} />;
-      },
-    });
-  }, [navigation]);
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerRight: () => {
+  //       return <Button title="Tap Me!" onPress={headerButtonPressHandler} />;
+  //     },
+  //   });
+  // }, [navigation]);
 
   return (
     <ScrollView style={styles.rootContainer}>

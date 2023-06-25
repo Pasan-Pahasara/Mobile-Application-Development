@@ -37,10 +37,10 @@ export default function App() {
             name="MealDetail"
             component={MealDetailScreen}
             options={{
-              title: "Meal Details",
-              headerRight: () => (
-                <Button title="Tap Me!" />
-              ),
+              // title: "Meal Details",
+              // headerRight: () => (
+              //   <Button title="Tap Me!" />
+              // ),
             }}
           />
         </Stack.Navigator>
