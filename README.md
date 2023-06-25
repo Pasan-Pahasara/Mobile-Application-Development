@@ -35,6 +35,7 @@ npm install @react-navigation/native-stack
 - **`Drawer Navigator`**
 ```
 npm install @react-navigation/drawer
+npx expo install react-native-gesture-handler react-native-reanimated
 ```
 - **`Bottom Tabs Navigator`**
 ```
