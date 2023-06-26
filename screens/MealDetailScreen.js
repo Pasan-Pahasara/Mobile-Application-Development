@@ -1,33 +1,42 @@
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  ScrollView,
-} from "react-native";
+import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import { MEALS } from "../data/dummy-data";
 import MealDetail from "../components/MealDetail";
-import { useLayoutEffect } from "react";
+import { useContext, useLayoutEffect } from "react";
 import Subtitle from "../components/MealDetails/Subtitle";
 import List from "../components/MealDetails/List";
 import IconButton from "../components/iconButton";
+import { FavoriteContext } from "../store/context/favorite-context";
 
 const MealDetailScreen = ({ route, navigation }) => {
+  const favoriteMealsCtx = useContext(FavoriteContext); //use context hook eka call karala Favorite context eka use karanna puluwan
+
   const mealId = route.params.mealId;
 
   const selectedMeal = MEALS.find((meal) => meal.id === mealId); //dummy data valin meal eka gannava
 
-  const headerButtonPressHandler = () => {
-    console.log("Header Button Pressed!");
+  const isFavorite = favoriteMealsCtx.ids.includes(mealId); //favorite meal eka thiyenavada kiyala check karanna puluwan
+
+  const changeFavoritesStatusHandler = () => {
+    if (isFavorite) {
+      favoriteMealsCtx.removeFavorite(mealId);
+    } else {
+      favoriteMealsCtx.addFavorite(mealId);
+    }
   };
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
-        return <IconButton icon="ios-star-outline" color="white" onPress={headerButtonPressHandler} />;
+        return (
+          <IconButton
+            icon={isFavorite ? "star" : "star-outline"}
+            color="white"
+            onPress={changeFavoritesStatusHandler}
+          />
+        );
       },
     });
-  }, [navigation]);
+  }, [navigation, changeFavoritesStatusHandler]);
 
   return (
     <ScrollView style={styles.rootContainer}>

@@ -9,6 +9,8 @@ import CategoryScreen from "./screens/CategoryScreen";
 import MealsOverviewScreen from "./screens/MealsOverviewScreen";
 import MealDetailScreen from "./screens/MealDetailScreen";
 import FavoritesScreen from "./screens/FavoritesScreen";
+import FavoriteContextProvider from "./store/context/favorite-context";
+
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -57,41 +59,43 @@ export default function App() {
   return (
     <>
       <StatusBar style="light"></StatusBar>
+      <FavoriteContextProvider>
       <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Meals Categories"
-          screenOptions={{
-            headerStyle: { backgroundColor: "#351401" },
-            headerTintColor: "#fff",
-            headerTitleStyle: { fontWeight: "bold" },
-            contentStyle: { backgroundColor: "#3f2f25" },
-          }}
-        >
-          {/* default ganna screen eka thamai udinma thina eka, nattam apita initialRouteName kiyala default ganna ona eka dennath puluvan*/}
-          <Stack.Screen
-            name="MealsCategories"
-            component={DrawerNavigator}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MealsOverview"
-            component={MealsOverviewScreen}
-            options={{ title: "Meals Overview" }}
-          />
-          <Stack.Screen
-            name="MealDetail"
-            component={MealDetailScreen}
-            options={
-              {
-                // title: "Meal Details",
-                // headerRight: () => (
-                //   <Button title="Tap Me!" />
-                // ),
+          <Stack.Navigator
+            initialRouteName="Meals Categories"
+            screenOptions={{
+              headerStyle: { backgroundColor: "#351401" },
+              headerTintColor: "#fff",
+              headerTitleStyle: { fontWeight: "bold" },
+              contentStyle: { backgroundColor: "#3f2f25" },
+            }}
+          >
+            {/* default ganna screen eka thamai udinma thina eka, nattam apita initialRouteName kiyala default ganna ona eka dennath puluvan*/}
+            <Stack.Screen
+              name="MealsCategories"
+              component={DrawerNavigator}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="MealsOverview"
+              component={MealsOverviewScreen}
+              options={{ title: "Meals Overview" }}
+            />
+            <Stack.Screen
+              name="MealDetail"
+              component={MealDetailScreen}
+              options={
+                {
+                  // title: "Meal Details",
+                  // headerRight: () => (
+                  //   <Button title="Tap Me!" />
+                  // ),
+                }
               }
-            }
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+            />
+          </Stack.Navigator> 
+        </NavigationContainer>
+      </FavoriteContextProvider>
     </>
   );
 }
