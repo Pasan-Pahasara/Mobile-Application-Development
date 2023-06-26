@@ -55,6 +55,11 @@ npm install @react-navigation/material-top-tabs react-native-tab-view
 npm install @reduxjs/toolkit react-redux
 ```
 ##
+## Manage HTTP Request using axios
+```
+npm install axios
+```
+##
 - **`Run Expo Go`**
 ```
 npx expo start
