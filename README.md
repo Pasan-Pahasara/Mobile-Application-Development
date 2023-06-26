@@ -50,7 +50,11 @@ npm install @react-navigation/material-bottom-tabs react-native-paper react-nati
 npm install @react-navigation/material-top-tabs react-native-tab-view
 ```
 ##
-
+## Install Redux Toolkit and React-Redux
+```
+npm install @reduxjs/toolkit react-redux
+```
+##
 - **`Run Expo Go`**
 ```
 npx expo start
